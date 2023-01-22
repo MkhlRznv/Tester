@@ -13,7 +13,7 @@ public class BestContributorToSelenide {
         open("https://github.com/selenide/selenide");
         // подвести мышь к первому аватару из блока contributors
         $(".BorderGrid").$(byText("Contributors")).ancestor(".BorderGrid-cell") // ancestor - ищет ближайшего предка (т.е. вверх по дереву)
-                .$$("ul li").first().hover();
+                .$$("ul li").first().hover(); // .hover() - наводит курсор на элемент без клика
         // проверка: во всплывающем окне есть текст Andrei Solntsev
 //        $$(".Popover .Popover-message").findBy(visible).shouldHave(text("Andrei Solntsev"));
         $(".Popover .Popover-message").shouldHave(text("Andrei Solntsev"));

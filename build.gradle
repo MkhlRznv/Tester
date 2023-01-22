@@ -9,7 +9,8 @@ repositories {
 dependencies {
     testImplementation (
             "com.codeborne:selenide:6.10.3",
-            "org.junit.jupiter:junit-jupiter:5.9.1")
+            "org.junit.jupiter:junit-jupiter:5.9.1",
+            "org.slf4j:slf4j-simple:1.7.29")
 }
 
 tasks.withType(JavaCompile) {
@@ -17,5 +18,9 @@ tasks.withType(JavaCompile) {
 }
 
 test {
+
+// принудительно меняет язык при тестах в браузере
+//    systemProperty "chromeoptions.prefs","intl.accept_languages=en"
+
     useJUnitPlatform()
 }
