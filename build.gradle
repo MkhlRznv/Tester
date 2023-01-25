@@ -6,21 +6,17 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    testImplementation (
-            "com.codeborne:selenide:6.10.3",
-            "org.junit.jupiter:junit-jupiter:5.9.1",
-            "org.slf4j:slf4j-simple:1.7.29")
-}
-
-tasks.withType(JavaCompile) {
+compileTestJava {
     options.encoding = 'UTF-8'
 }
 
+dependencies {
+    testImplementation(
+            "com.codeborne:selenide:6.10.3",
+            "org.junit.jupiter:junit-jupiter:5.9.1"
+    )
+}
+
 test {
-
-// принудительно меняет язык при тестах в браузере
-//    systemProperty "chromeoptions.prefs","intl.accept_languages=en"
-
-    useJUnitPlatform()
+    useJUnitPlatform{}
 }
