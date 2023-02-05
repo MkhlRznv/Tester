@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class TextBoxTestsOnLection {
+public class TextBoxTestsOnLecture {
 
     @BeforeAll
     static void beforeAll(){
